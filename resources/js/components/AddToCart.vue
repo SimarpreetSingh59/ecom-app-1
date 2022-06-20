@@ -35,9 +35,7 @@ export default {
         var response = await axios.post('/cart', {
             'product_id': this.productId
         })
-
-        console.log(response.data)
-            
+          
 
         }
     },

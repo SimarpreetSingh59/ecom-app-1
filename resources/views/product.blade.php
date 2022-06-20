@@ -1,30 +1,6 @@
 
 @extends('layouts.frontend')
 @section('content')
-
-
-    <nav class="navbar bg-primary navbar-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand">ECommerce</a>
-
-            <div class="d-flex">
-                @if (Route::has('login'))
-                        <div class="hidden">
-                @auth
-                    <a href="{{ url('/home') }}" class="">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="btn btn-dark">Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-danger">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-            </div>
-        
-        </div>
-    </nav>
         
     <div class="">
         {{-- Crousel Section --}}
@@ -54,7 +30,7 @@
 
         {{-- Product Cards --}}
 
-        <div class="row row-cols-1 row-cols-md-4 g-4 mt-5 p-2">
+        <div class="row row-cols-1 row-cols-md-5 g-4 mt-5 p-2">
             @if(isset($products))
                 @foreach($products as $product)
                     <div class="col">

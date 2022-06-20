@@ -18,6 +18,30 @@
 
     </head>
     <body style="overflow-x: hidden">
+
+        <nav class="navbar bg-primary navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url('/') }}" >ECommerce</a>
+    
+                <div class="d-flex">
+                    @if (Route::has('login'))
+                            <div class="hidden">
+                    @auth
+                        {{-- Links After Auth will display here! --}}
+                        <a href="{{ route('cart') }}" class="btn btn-dark">Cart</a>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-dark">Log in</a>
+    
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-danger">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+                </div>
+            
+            </div>
+        </nav>
             
         <div id="app">
     
